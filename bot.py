@@ -2,11 +2,11 @@ import os
 import aiohttp
 from pyrogram import Client, filters
 
-API_ID = os.environ.get('API_ID')
-API_HASH = os.environ.get('API_HASH')
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-API_KEY = os.environ.get('API_KEY')
-WEBSITE = os.environ.get('WEBSITE')
+API_ID = 1923471
+API_HASH = "fcdc178451cd234e63faefd38895c991"
+BOT_TOKEN = "5477637816:AAFH5szsoiJPsEhOzW9S0ZfsEpXIKOhjvB0"
+API_KEY = "003db0d0a2e56943b93dc0abd80e1260a17166c8"
+WEBSITE = "tnlink.in"
 
 
 try:
@@ -66,7 +66,7 @@ async def get_shortlink(link, x):
             data = await response.json()
             print(data["status"])
             if data["status"] == "success":
-                return f"<code>{data['shortenedUrl']}</code>\n\nHere is your Link:\n{data['shortenedUrl']}"
+                return f"<code>{data['shortenedUrl']}</code>\n\nLink:\n{data['shortenedUrl']}"
             else:
                 return f"Error: {data['message']}"
 
